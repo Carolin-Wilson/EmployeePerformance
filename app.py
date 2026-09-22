@@ -19,26 +19,15 @@ st.write(
     "Enter Training Hours and Attendance to predict employee performance."
 )
 
-'''
+
 # Load trained ANN model
 
 model = tf.keras.models.load_model(
     "employee_performance_ann.keras"
 )
 
-'''
-import os
-import tensorflow as tf
 
-# Check if the model file exists to prevent path errors
-model_path = "employee_performance_ann.keras"
 
-if os.path.exists(model_path):
-    # Load trained ANN model with clean standard spaces
-    model = tf.keras.models.load_model(model_path)
-    print("Model loaded successfully!")
-else:
-    raise FileNotFoundError(f"Model file not found at: {os.path.abspath(model_path)}")
 # User inputs
 
 training_hours = st.number_input(
